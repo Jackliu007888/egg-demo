@@ -21,7 +21,7 @@ class RemoteErrorTransport extends Transport {
       hostname,
       message: log
     }
-    // process._socket.send(logData)
+    // this.options.app._socket.send(logData)
     console.log(logData)
   }
 }

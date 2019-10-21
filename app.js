@@ -18,7 +18,7 @@ class AppBootHook {
     // 可以用来加载应用自定义的文件，启动自定义的服务
     
     // 起socket 客户端
-    // process._socket = Socket('http://localhost:3000')
+    // this.app._socket = Socket('http://localhost:3000')
 
     this.app
       .getLogger('errorLogger')

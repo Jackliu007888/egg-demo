@@ -12,6 +12,11 @@
 npm run dev
 ```
 
+### 前端项目联调
+
+- 前端项目需要将 node 中间层的接口地址代理到 `localhost:7001`
+- 前端项目打包目录为 `app/view/`
+
 ### 网关
 
 从网关过来的请求会在请求的头部加上 `userid`  `nickname` `openid` `appid`
@@ -83,8 +88,8 @@ HttpRequest
 
 ### debugger
 
+- 执行 vscode debugger **（以下可选）**
 - debugger 前需推送镜像到远端， k8s需正常发现服务
-- 执行 vscode debugger
 - 执行 `./cli ${命名空间名称}`
 - 执行 `debug ${服务名} ${端口}`
 

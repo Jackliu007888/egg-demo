@@ -1,4 +1,5 @@
 const Controller = require('egg').Controller
+const LOGIN_API = require('../utils/test/login')
 
 class TestController extends Controller {
   constructor (ctx){
@@ -25,6 +26,14 @@ class TestController extends Controller {
     ctx.logger.info('some request data: %j', ctx.request.body)
     throw new Error('sadsadada')
     ctx.helper.success({ctx, res: payload})
+  }
+
+  async demo() {
+    const { ctx } = this
+    const payload = ctx.request.query || {}
+    ctx.logger.info('some request data: %j', ctx.request.body)
+    const resp = await LOGIN_API(ctx)
+    ctx.helper.success({ctx, res: {resp, payload}})
   }
 }
 

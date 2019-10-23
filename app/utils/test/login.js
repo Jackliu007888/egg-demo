@@ -1,5 +1,5 @@
 function login(app) {
-  return app.curl('https://spdev.51zcm.cc/sp-mate/api-water/user/login', {
+  return app.curl('api-water.water/user/login', {
     method: 'POST',
     // 通过 contentType 告诉 HttpClient 以 JSON 格式发送
     contentType: 'json',

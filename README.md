@@ -114,6 +114,19 @@ HttpRequest
 - 执行 `./build.sh`
 - cli 到命名空间 重新构建服务
 
+### 测试域名 nginx 配置
+
+- 如果proxy_pass的URL定向里包括URI，那么请求中匹配到location中URI的部分会被proxy_pass后面URL中的URI替换
+- 如果proxy_pass的URL定向里不包括URI，那么请求中的URI会保持原样传送给后端server
+
+***注意`8080`后的 `/`***
+
+```bash
+    location /name/ {
+      proxy_pass http://egg-demo.sp-base:8080/
+    }
+```
+
 ### 部署到正式环境
 
 - 修改 `build-pro.sh` 中的命名空间、服务名、版本号
